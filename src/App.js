@@ -5,7 +5,6 @@ import './styles/App.css'
 function App() {
   return (
     <div className="App">
-      <h1>Напиши новый пост, пидрило!</h1>
       <Posts/>
     </div>
   );

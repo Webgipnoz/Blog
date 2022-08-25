@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PostItem from './PostItem';
+import PostList from './PostList';
 
 const Posts = () => {
     const[posts, setPosts] = useState([
@@ -42,10 +42,7 @@ const Posts = () => {
             </div>
             <button onClick={addNewPost}>Создать пост</button>
         </div>
-        <h1>Список Постов</h1>
-        {posts.map((post, index) => 
-            <PostItem number={index + 1} post={post} key={post.id}/>
-        )}
+            <PostList posts={posts}></PostList>
         </div>
     );
 };
