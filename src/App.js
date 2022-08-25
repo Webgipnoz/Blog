@@ -1,10 +1,11 @@
 import React from "react";
-import NewPost from "./components/newpost/NewPost";
-import './components/newpost/NewPost.css'
+import NewPost from "./components/NewPost";
+import './components/Components.css'
 
 function App() {
   return (
     <div className="App">
+      <h1>Блог о том и этом</h1>
       <NewPost/>
     </div>
   );
