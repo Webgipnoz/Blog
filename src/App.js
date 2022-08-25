@@ -1,12 +1,12 @@
 import React from "react";
-import NewPost from "./components/NewPost";
+import Posts from "./components/Posts";
 import './components/Components.css'
 
 function App() {
   return (
     <div className="App">
-      <h1>Блог о том и этом</h1>
-      <NewPost/>
+      <h1>Напиши новый пост, пидрило!</h1>
+      <Posts/>
     </div>
   );
 }

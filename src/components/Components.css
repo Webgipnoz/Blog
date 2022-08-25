@@ -9,13 +9,19 @@
     justify-content: center;
 }
 
+h1{
+    padding: 15px;
+}
+
 .App{
     width: 800px;
 }
 
-.BlockPost{
+.post{
     display: flex;
     padding: 15px;
-    border: 2px, solid black;
+    border: 2px solid teal;
     margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
 }
