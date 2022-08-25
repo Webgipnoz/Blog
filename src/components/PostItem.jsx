@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StylePost = (props) => {
+const PostItem = (props) => {
     return (  
         <div className='post'>
             <div className='post_content'>
@@ -16,4 +16,4 @@ const StylePost = (props) => {
     );
 };
 
-export default StylePost;
+export default PostItem;
