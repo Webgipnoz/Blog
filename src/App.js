@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import PostForm from "./components/PostForm";
 import PostList from "./components/PostList";
+import MySelect from "./components/UI/select/MySelect";
 import './styles/App.css'
 
 function App() {
@@ -9,7 +10,9 @@ function App() {
         {id:2, name:'JavaScripts2', info:'Sanya hui sosi'},
         {id:3, name:'JavaScripts3', info:'Sanya hui sosi'},
     ])
-      
+    
+    const [selectedSort, setSelectedSort] = useState('')
+
     const createPost = (newPost) =>{
         setPosts([...posts, newPost])
     }
@@ -18,10 +21,34 @@ function App() {
         setPosts(posts.filter(p => p.id !== post.id))
     }
 
+    const sortPosts =(sort) =>{
+        setSelectedSort(sort)
+        console.log(sort)
+    } 
+
     return (
         <div className='App'>
             <PostForm create={createPost}/>
-            <PostList remove={removePost} posts={posts}></PostList>
+            <hr style={{margin:'15px 0'}}></hr>
+            <div>
+                <MySelect
+                value={selectedSort}
+                onChange={sortPosts}
+                defaultValue='Sorting by'
+                options={[
+                        {value: 'name', name: 'By Name'},
+                        {value: 'info', name: 'By Description'}
+                    ]}
+                />
+            </div>
+            {posts.length 
+                ? 
+                <PostList remove={removePost} posts={posts}></PostList>
+                : 
+                <h1 style={{textAlign: 'center'}}>
+                    We don`t have posts
+                </h1>
+            }
         </div>
   );
 }
